@@ -1,0 +1,2 @@
+class Rag < ApplicationRecord
+end
