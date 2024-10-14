@@ -1,27 +1,36 @@
-<div id="<%= dom_id rag %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Name:</strong>
-    <%= rag.name %>
-  </p>
+<div id="<%= dom_id rag %>" class="relative p-12 mt-12 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 flex justify-between">
+  <div class="inline-block max-w-4xl">
+    <p class="text-white">
+      <strong class="font-medium">Name:</strong>
+      <%= rag.name %>
+    </p>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Description:</strong>
-    <%= rag.description %>
-  </p>
+    <p class="mt-2 text-white">
+      <strong class="font-medium">Description:</strong>
+      <%= rag.description %>
+    </p>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Rate:</strong>
-    <%= rag.rate %>
-  </p>
+    <p class="mt-2 text-white">
+      <strong class="font-medium">Rate:</strong>
+      <%= rag.rate %>
+    </p>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Color:</strong>
-    <%= rag.color %>
-  </p>
+    <p class="mt-2 text-white">
+      <strong class="font-medium">Color:</strong>
+      <%= rag.color %>
+    </p>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Size:</strong>
-    <%= rag.size %>
-  </p>
+    <p class="mt-2 text-white">
+      <strong class="font-medium">Size:</strong>
+      <%= rag.size %>
+    </p>
 
+    <% if action_name == 'index' %>
+      <%= link_to "More info", rag, class: "mt-4 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <% end %>
+  </div>
+
+  <div class="inline-block max-w-sm ml-10">
+    <img src="/rags/rag<%= rag.id%>.webp" />
+  </div>
 </div>
