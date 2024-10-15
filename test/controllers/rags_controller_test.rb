@@ -17,7 +17,7 @@ class RagsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create rag" do
     assert_difference("Rag.count") do
-      post rags_url, params: { rag: { color: @rag.color, description: @rag.description, name: @rag.name, rate: @rag.rate, size: @rag.size } }
+      post rags_url, params: { rag: { color: @rag.color, description: @rag.description, name: @rag.name, condition: @rag.condition, size: @rag.size } }
     end
 
     assert_redirected_to rag_url(Rag.last)
@@ -34,7 +34,7 @@ class RagsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update rag" do
-    patch rag_url(@rag), params: { rag: { color: @rag.color, description: @rag.description, name: @rag.name, rate: @rag.rate, size: @rag.size } }
+    patch rag_url(@rag), params: { rag: { color: @rag.color, description: @rag.description, name: @rag.name, condition: @rag.condition, size: @rag.size } }
     assert_redirected_to rag_url(@rag)
   end
 

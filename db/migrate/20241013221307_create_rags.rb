@@ -3,7 +3,7 @@ class CreateRags < ActiveRecord::Migration[7.2]
     create_table :rags do |t|
       t.string :name
       t.text :description
-      t.integer :rate
+      t.integer :condition
       t.string :color
       t.string :size
 

@@ -3,7 +3,24 @@ class RagsController < ApplicationController
 
   # GET /rags or /rags.json
   def index
-    @rags = Rag.all
+    if params[:query].present?
+      client = OpenAI::Client.new(access_token: ENV["OPENAI_API_KEY"])
+
+      embedding = layer_norm client
+        .embeddings(parameters: { model: "text-embedding-3-large", input: params[:query] })
+        .dig("data", 0, "embedding")
+
+      @rags = Rag.nearest_neighbors(:embedding, embedding, distance: "cosine").first(3)
+    else
+      @rags = Rag.all
+    end
+  end
+
+  def layer_norm(embedding)
+    mean = embedding.sum / embedding.size
+    variance = embedding.map { |e| (e - mean) ** 2 }.sum / embedding.size
+    stddev = Math.sqrt(variance + 1e-5)
+    embedding.map { |e| (e - mean) / stddev }
   end
 
   # GET /rags/1 or /rags/1.json
@@ -65,6 +82,6 @@ class RagsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def rag_params
-      params.require(:rag).permit(:name, :description, :rate, :color, :size)
+      params.require(:rag).permit(:name, :description, :condition, :color, :size)
     end
 end

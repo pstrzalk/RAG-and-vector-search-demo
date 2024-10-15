@@ -17,7 +17,7 @@ class RagsTest < ApplicationSystemTestCase
     fill_in "Color", with: @rag.color
     fill_in "Description", with: @rag.description
     fill_in "Name", with: @rag.name
-    fill_in "Rate", with: @rag.rate
+    fill_in "Condition", with: @rag.condition
     fill_in "Size", with: @rag.size
     click_on "Create Rag"
 
@@ -32,7 +32,7 @@ class RagsTest < ApplicationSystemTestCase
     fill_in "Color", with: @rag.color
     fill_in "Description", with: @rag.description
     fill_in "Name", with: @rag.name
-    fill_in "Rate", with: @rag.rate
+    fill_in "Condition", with: @rag.condition
     fill_in "Size", with: @rag.size
     click_on "Update Rag"
 
