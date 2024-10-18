@@ -1,6 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    Ascii85 (1.1.1)
     actioncable (7.2.1)
       actionpack (= 7.2.1)
       activesupport (= 7.2.1)
@@ -73,7 +74,9 @@ GEM
       tzinfo (~> 2.0, >= 2.0.5)
     addressable (2.8.7)
       public_suffix (>= 2.0.2, < 7.0)
+    afm (0.2.2)
     ast (2.4.2)
+    baran (0.1.12)
     base64 (0.2.0)
     bigdecimal (3.1.8)
     bindex (0.8.1)
@@ -111,6 +114,7 @@ GEM
       net-http
     globalid (1.2.1)
       activesupport (>= 6.1)
+    hashery (2.1.2)
     i18n (1.14.6)
       concurrent-ruby (~> 1.0)
     importmap-rails (2.0.3)
@@ -125,6 +129,14 @@ GEM
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
     json (2.7.2)
+    json-schema (4.3.1)
+      addressable (>= 2.8)
+    langchainrb (0.18.0)
+      baran (~> 0.1.9)
+      json-schema (~> 4)
+      matrix
+      pragmatic_segmenter (~> 0.3.0)
+      zeitwerk (~> 2.5)
     language_server-protocol (3.17.0.3)
     logger (1.6.1)
     loofah (2.22.0)
@@ -171,7 +183,15 @@ GEM
     parser (3.3.5.0)
       ast (~> 2.4.1)
       racc
+    pdf-reader (2.12.0)
+      Ascii85 (~> 1.0)
+      afm (~> 0.2.1)
+      hashery (~> 2.0)
+      ruby-rc4
+      ttfunk
     pg (1.5.8)
+    pgvector (0.3.2)
+    pragmatic_segmenter (0.3.24)
     psych (5.1.2)
       stringio
     public_suffix (6.0.1)
@@ -219,6 +239,7 @@ GEM
     rake (13.2.1)
     rdoc (6.7.0)
       psych (>= 4.0.0)
+    redcarpet (3.6.0)
     regexp_parser (2.9.2)
     reline (0.5.10)
       io-console (~> 0.5)
@@ -256,6 +277,7 @@ GEM
       faraday (>= 1)
       faraday-multipart (>= 1)
     ruby-progressbar (1.13.0)
+    ruby-rc4 (0.1.5)
     rubyzip (2.3.2)
     securerandom (0.3.1)
     selenium-webdriver (4.25.0)
@@ -264,6 +286,8 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
+    sequel (5.85.0)
+      bigdecimal
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -288,6 +312,8 @@ GEM
       railties (>= 7.0.0)
     thor (1.3.2)
     timeout (0.4.1)
+    ttfunk (1.8.0)
+      bigdecimal (~> 3.1)
     turbo-rails (2.0.10)
       actionpack (>= 6.0.0)
       railties (>= 6.0.0)
@@ -325,13 +351,18 @@ DEPENDENCIES
   debug
   importmap-rails
   jbuilder
+  langchainrb (~> 0.18.0)
   neighbor
+  pdf-reader (~> 2.12)
   pg (~> 1.1)
+  pgvector (~> 0.3.2)
   puma (>= 5.0)
   rails (~> 7.2.1)
+  redcarpet (~> 3.6)
   rubocop-rails-omakase
   ruby-openai (~> 7.3)
   selenium-webdriver
+  sequel (~> 5.85)
   sprockets-rails
   stimulus-rails
   tailwindcss-rails

@@ -60,3 +60,13 @@ end
 
 gem "ruby-openai", "~> 7.3"
 gem "neighbor"
+
+gem "langchainrb", "~> 0.18.0"
+
+gem "sequel", "~> 5.85"
+
+gem "pgvector", "~> 0.3.2"
+
+gem "pdf-reader", "~> 2.12"
+
+gem "redcarpet", "~> 3.6"

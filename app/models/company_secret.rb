@@ -1,0 +1,2 @@
+class CompanySecret < ApplicationRecord
+end

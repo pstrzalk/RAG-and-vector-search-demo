@@ -10,10 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_10_14_222545) do
+ActiveRecord::Schema[7.2].define(version: 2024_10_15_131533) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "vector"
+
+  create_table "company_secrets", id: :integer, default: nil, force: :cascade do |t|
+    t.text "content"
+    t.vector "vectors", limit: 3072
+    t.text "namespace"
+  end
 
   create_table "rags", force: :cascade do |t|
     t.string "name"
