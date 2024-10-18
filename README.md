@@ -1,24 +1,15 @@
-# README
+# RAGS - Vector Search + RAG demo
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Source code of application used as a demo for "My LLM is smarter than yours" presentation.
+It showcases usage of Vector Search and RAG architecture
 
-Things you may want to cover:
+## IMPORTANT!
 
-* Ruby version
+Add your custom knowledge sources in `seeds/company_secrets.rb` before running seeds
+This repository does not include any data sources for company secrets and will raise an exception if run in this version.
 
-* System dependencies
+## If you have any problems with this repository
 
-* Configuration
+Please just figure it out :)
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+You may also reach out to me, but I procrastinate so much that it may take a while.

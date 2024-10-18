@@ -1,8 +1,10 @@
 database = CompanySecrets::Database.get
+
+# Add your PDFs, texts and other data below
+# Add paths to the array. Use full paths
+#
+raise StandardError, 'no data added'
+#
 database.add_data(
-  paths: [
-    "/Users/pawel/projects/llm/rags/storage/knowledge.pdf",
-    "/Users/pawel/projects/llm/rags/storage/phonebook.txt",
-    "/Users/pawel/projects/llm/rags/storage/passwords.txt"
-  ]
+  paths: []
 )
