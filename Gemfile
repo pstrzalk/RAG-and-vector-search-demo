@@ -63,7 +63,7 @@ gem "neighbor"
 
 gem "langchainrb", "~> 0.18.0"
 
-gem "sequel", "~> 5.85"
+gem "sequel", "~> 5.86"
 
 gem "pgvector", "~> 0.3.2"
 
