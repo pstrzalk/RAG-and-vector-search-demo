@@ -67,6 +67,6 @@ gem "sequel", "~> 5.85"
 
 gem "pgvector", "~> 0.3.2"
 
-gem "pdf-reader", "~> 2.12"
+gem "pdf-reader", "~> 2.13"
 
 gem "redcarpet", "~> 3.6"
