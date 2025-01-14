@@ -61,7 +61,7 @@ end
 gem "ruby-openai", "~> 7.3"
 gem "neighbor"
 
-gem "langchainrb", "~> 0.18.0"
+gem "langchainrb", "~> 0.19.3"
 
 gem "sequel", "~> 5.85"
 
